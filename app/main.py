@@ -8,5 +8,5 @@ def copy_file(command: str) -> None:
                 with (open(names[1], "r") as file_in,
                       open(names[2], "w") as file_out):
                     file_out.write(file_in.read())
-            except FileNotFoundError:
-                print(f"File {names[1]} not found")
+            except FileNotFoundError as e:
+                print(f"File {e.filename} not found")
